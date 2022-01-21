@@ -1,7 +1,22 @@
+:root {
+  --bs-font-sans-serif: "Outfit", sans-serif;
+}
+
+body {
+  background-image: radial-gradient(circle farthest-side, #cdb9e0, #747474);
+}
+
+a {
+  color: var(--bs-dark);
+}
+
 /* container */
 .container-xxl {
   padding-right: 0;
   padding-left: 0;
+  max-width: 1500px;
+  box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
+  background-image: radial-gradient(circle farthest-side, #54a1d4, #49337c);
 }
 
 /* footer */
@@ -10,9 +25,13 @@ footer ul {
   position: fixed;
   grid-auto-flow: column;
   grid-gap: 24px;
-  margin-top: 4vh;
+  margin-top: 17px;
   left: 50%;
   transform: translateX(-50%);
+}
+footer ul li {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 footer a {
@@ -54,7 +73,7 @@ footer div {
   display: flex;
   height: 60px;
   width: 100%;
-  background-color: #002a38;
+  background-color: #532270;
   line-height: 1.3;
 }
 
