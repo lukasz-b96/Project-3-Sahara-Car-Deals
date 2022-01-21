@@ -2,8 +2,14 @@
   --bs-font-sans-serif: "Outfit", sans-serif;
 }
 
+/* main */
+/* body */
+
 body {
-  background-image: radial-gradient(circle farthest-side, #cdb9e0, #747474);
+  background-image: radial-gradient(circle farthest-side, #ffffff, #002b6b);
+  margin-bottom: 200px;
+
+  overflow-x: hidden;
 }
 
 a {
@@ -11,15 +17,21 @@ a {
 }
 
 /* container */
-.container-xxl {
+/* .container-xxl {
   padding-right: 0;
   padding-left: 0;
-  max-width: 1500px;
+
+  min-height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
-  background-image: radial-gradient(circle farthest-side, #54a1d4, #49337c);
-}
+  background-image: radial-gradient(circle farthest-side, #ffffff, #0067a3);
+} */
 
 /* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100% !important;
+}
 footer ul {
   display: inline-grid;
   position: fixed;
@@ -47,7 +59,7 @@ footer a:hover {
 footer ul p {
   position: fixed;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   left: 100%;
   top: 0%;
 }
@@ -73,7 +85,7 @@ footer div {
   display: flex;
   height: 60px;
   width: 100%;
-  background-color: #532270;
+  background-color: #123b88;
   line-height: 1.3;
 }
 
@@ -101,5 +113,54 @@ footer div {
     top: 0%;
     left: 100%;
     transform: rotate(360deg);
+  }
+}
+/*Waves*/
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 400px;
+}
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 1000px) {
+  .waves {
+    height: 20px;
+    min-height: 10px;
+  }
+  .content {
+    height: 10vh;
   }
 }
