@@ -1,0 +1,86 @@
+/* container */
+.container-xxl {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* footer */
+footer ul {
+  display: inline-grid;
+  position: fixed;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+  margin-top: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+footer a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+}
+
+footer ul p {
+  position: fixed;
+  margin-top: 20px;
+  margin-left: 20px;
+  left: 100%;
+  top: 0%;
+}
+footer .psst {
+  font-size: 12px;
+  color: white;
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 5px;
+  padding-left: 30px;
+}
+
+footer ul:hover li + p {
+  position: fixed;
+
+  animation: wave-animation 6s infinite;
+}
+
+/* below is just for demo styling */
+
+footer div {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: #002a38;
+  line-height: 1.3;
+}
+
+@keyframes wave-animation {
+  0% {
+    left: 100%;
+    top: 0%;
+  }
+  25% {
+    left: 0%;
+    top: 0%;
+    transform: rotate(90deg);
+  }
+  50% {
+    left: 0%;
+    top: -180%;
+    transform: rotate(180deg);
+  }
+  75% {
+    left: 100%;
+    top: -180%;
+    transform: rotate(270deg);
+  }
+  100% {
+    top: 0%;
+    left: 100%;
+    transform: rotate(360deg);
+  }
+}
