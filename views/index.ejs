@@ -21,4 +21,80 @@
 </div>
 
 
-<!--  -->
+<!-- categories -->
+
+<div class="row row-cols-2 row-cols-lg-6 g-3 g-lg-3">
+    <% if(brands != "") { %>
+    <% brands.forEach(function(brand,index){ %>
+
+
+    <a href="#" class="col text-center scale-hover">
+        <div class=" shadow">
+            <img src="/img/<%- brand.image -%>" alt="<%- brand.name -%>" Loading="lazy">
+        </div>
+        <div class="pt-1 "><%- brand.name -%></div>
+    </a>
+    <%}) %>
+    <% } %>
+
+    <a href="#" class="col text-center scale-hover">
+        <div class=" shadow">
+            <img src="/img/ViewAll.png" alt="view-all" Loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+</div>
+
+<!-- Latest cars -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Car</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+        <a href="/car/#" class=" col text-center scale-hover-big">
+            <div class=" shadow">
+                <img src="/img/ViewAll.png" alt="view-all" Loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+        <a href="/car/#" class=" col text-center scale-hover-big">
+            <div class=" shadow">
+                <img src="/img/ViewAll.png" alt="view-all" Loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+        <a href="/car/#" class=" col text-center scale-hover-big">
+            <div class=" shadow">
+                <img src="/img/ViewAll.png" alt="view-all" Loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+        <a href="/car/#" class=" col text-center scale-hover-big">
+            <div class=" shadow">
+                <img src="/img/ViewAll.png" alt="view-all" Loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+
+
+    </div>
+</section>
+
+
+<!-- Submit cars -->
+
+<section class="px-4 py-4 my-5 text-center">
+    <img src="/img/Publish.jpg" alt="Publish Your Car Deal!" width="500" height="210" Loading="lazy"
+        class="d-block mx-auto mb-4 img-fluid rounded shadow">
+    <h1 class="display-5 fw-bold">Publish Your Car Deal!</h1>
+    <div clas="col-lg-6 mx-auto"></div>
+    <p class="lead-mb-4">
+        In our webiste you can put your car deal in our website without any fee !
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/subit-recipe" class="btn btn-primary btn-dark  btn-lg">Submit Deal</a>
+    </div>
+</section>

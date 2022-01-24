@@ -6,14 +6,80 @@
 /* body */
 
 body {
-  background-image: radial-gradient(circle farthest-side, #ffffff, #002b6b);
-  margin-bottom: 200px;
-
+  background-image: radial-gradient(circle farthest-side, #ffffff, #060e1d);
+  color: white !important;
   overflow-x: hidden;
 }
 
 a {
-  color: var(--bs-dark);
+  text-decoration: none;
+  color: white !important;
+}
+
+a:hover {
+  color: rgb(175, 175, 175);
+}
+.divader {
+  margin-bottom: 200px;
+}
+.scale-hover div {
+  border-radius: 9px;
+  transition: 300ms all;
+  text-decoration: none;
+}
+.scale-hover img {
+  height: 70px !important;
+  transition: 300ms all;
+}
+.scale-hover:hover img {
+  transform: scale(1.1);
+}
+
+.scale-hover-big div {
+  border-radius: 9px;
+  transition: 300ms all;
+  text-decoration: none;
+}
+.scale-hover-big img {
+  height: 150px !important;
+  transition: 300ms all;
+  width: 100%;
+  object-fit: cover;
+}
+.scale-hover-big {
+  transition: 300ms all;
+}
+.scale-hover-big:hover {
+  transition: 300ms all;
+  transform: scale(1.05);
+}
+
+/* Category Card */
+.car_link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+
+.car_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 330px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.car_img img {
+  width: 100%;
+  object-fit: cover;
+  transition: 250ms all;
+}
+
+.car_img:hover img {
+  transform: scale(1.1);
 }
 
 /* container */
@@ -120,11 +186,11 @@ footer div {
 .waves {
   position: relative;
   width: 100%;
-  height: 15vh;
+  height: 1vh;
   margin-bottom: -7px;
   /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 400px;
+  min-height: 50px;
+  max-height: 200px;
 }
 /* Animation */
 .parallax > use {
