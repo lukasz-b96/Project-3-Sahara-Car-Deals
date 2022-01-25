@@ -6,29 +6,44 @@
 /* body */
 
 body {
-  background-image: radial-gradient(circle farthest-side, #ffffff, #060e1d);
-  color: white !important;
+
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: radial-gradient(circle farthest-side,#d4d4d4,#decba4 ); 
+  background-size: cover !important;
+  color: black !important;
   overflow-x: hidden;
+  height: 100% !important;
+  font-size: 20px;
+}
+main{
+  height: 100% !important;
+  margin-bottom: 40vh;
 }
 
 a {
   text-decoration: none;
-  color: white !important;
+  color: black !important;
+}
+
+.shorter{
+  width: 60%;
+  float: right !important;
 }
 
 a:hover {
   color: rgb(175, 175, 175);
 }
-.divader {
-  margin-bottom: 200px;
-}
+
+/* Brands Card */
+
+
 .scale-hover div {
   border-radius: 9px;
   transition: 300ms all;
   text-decoration: none;
 }
 .scale-hover img {
-  height: 70px !important;
+  height: 15vh !important;
   transition: 300ms all;
 }
 .scale-hover:hover img {
@@ -41,9 +56,10 @@ a:hover {
   text-decoration: none;
 }
 .scale-hover-big img {
-  height: 150px !important;
+  height: 30vh  !important;
   transition: 300ms all;
   width: 100%;
+  border-radius: 9px;
   object-fit: cover;
 }
 .scale-hover-big {
@@ -54,7 +70,6 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* Category Card */
 .car_link {
   text-align: center;
   display: block;
@@ -82,21 +97,54 @@ a:hover {
   transform: scale(1.1);
 }
 
-/* container */
-/* .container-xxl {
-  padding-right: 0;
-  padding-left: 0;
 
-  min-height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
-  background-image: radial-gradient(circle farthest-side, #ffffff, #0067a3);
-} */
+
+
+/* Brands page */
+
+@media screen and (max-width: 992px) {
+  .max-width{
+    max-width: 90%
+  }
+}
+
+
+/* Car page*/
+.car-img{
+  max-height: 100%;
+  max-width:  80vw !important;
+}
+
+
+
+/* About page*/
+ul{
+  list-style-type: none;
+}
+li a {
+  color: black;
+  text-decoration: none !important;
+  margin-left: 5px;
+}
+li a:hover {
+  color: black;
+}
+@media (max-width: 600px) {
+  li {
+    font-size: 12px !important;
+  }
+
+}
+
+
 
 /* footer */
+
 footer {
   position: fixed;
   bottom: 0;
   width: 100% !important;
+  z-index: 999 !important;
 }
 footer ul {
   display: inline-grid;
@@ -131,7 +179,7 @@ footer ul p {
 }
 footer .psst {
   font-size: 12px;
-  color: white;
+  color: black;
   display: inline;
   overflow: hidden;
   white-space: nowrap;
@@ -141,20 +189,73 @@ footer .psst {
 
 footer ul:hover li + p {
   position: fixed;
-
   animation: wave-animation 6s infinite;
 }
-
-/* below is just for demo styling */
 
 footer div {
   display: flex;
   height: 60px;
   width: 100%;
-  background-color: #123b88;
+  background-color: #cbbd91 ;
+
   line-height: 1.3;
 }
 
+
+/*Waves*/
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 1vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 50px;
+  max-height: 200px;
+}
+
+
+/* Animations */
+
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 1vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 50px;
+  max-height: 200px;
+}
+
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
 @keyframes wave-animation {
   0% {
     left: 100%;
@@ -181,45 +282,7 @@ footer div {
     transform: rotate(360deg);
   }
 }
-/*Waves*/
 
-.waves {
-  position: relative;
-  width: 100%;
-  height: 1vh;
-  margin-bottom: -7px;
-  /*Fix for safari gap*/
-  min-height: 50px;
-  max-height: 200px;
-}
-/* Animation */
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
 /*Shrinking for mobile*/
 @media (max-width: 1000px) {
   .waves {
@@ -230,3 +293,5 @@ footer div {
     height: 10vh;
   }
 }
+
+

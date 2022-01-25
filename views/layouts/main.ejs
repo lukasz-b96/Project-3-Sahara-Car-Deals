@@ -21,38 +21,39 @@
 
 <body>
 
-    <div class="divader">
+    
 
 
         <div class="px-md-5">
             <header
-                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2 border-bottom">
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <img src="/img/Logo.png" width="150" height="60" alt="Logo CarDeals">
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2 border-bottom ">
+                <a href="/" class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none ">
+                    <img clas src="/img/Logo.png" height="60" alt="Logo CarDeals">
                 </a>
 
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <ul class="nav justify-content-center col-md-3 col-md-4 ">
                     <li><a href="/" class="nav-link px-3 link-secondary">Home</a></li>
                     <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
-                    <li><a href="/submit-car" class="nav-link px-3 link-dark">Submit</a></li>
+                    <li><a href="/submit" class="nav-link px-3 link-dark">Submit</a></li>
                     <li><a href="/contact" class="nav-link px-3 link-dark">Contact</a></li>
                 </ul>
 
-                <div class="col-md-auto col-lg-auto mb-lg-2  mb-lg-2 me-lg-2">
+                <div class="col-md-3 col-md-4 form-inline">
                     <form method="POST" action="/search">
-                        <input type="search" name="searchTerm" class="form-control" placeholder="Search..."
-                            aria-label="Search">
-                    </form>
+                        <input type="search" name="searchTerm" class="form-control pull-right shorter" placeholder="Search..." aria-label="Search">
+                      </form>
                 </div>
 
             </header>
 
-            <main>
+            <main class="max-width  mx-auto">
                 <%- body  -%>
+  
+                 
             </main>
 
         </div>
-    </div>
+    
 
 
 
@@ -64,17 +65,17 @@
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(48,6,188,0.7)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(62,7,242,0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(18,59,218,0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(18,59,136,1)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="#b19d5ed2" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="#baa86fb4" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#c2b280da" />
+                <use xlink:href="#gentle-wave" x="48" y="9" fill="#cabc91" />
             </g>
         </svg>
         <div>
             <ul>
-                <li><a href="https://twitter.com/julesforrest">Jakiś link</a></li>
-                <li><a href="mailto:julesforrest@gmail.com">LinkedIn</a></li>
-                <li><a href="https://github.com/julesforrest">Github</a></li>
+                <li><a href="">Jaki</a></li>
+                <li><a href="">LinkedIn</a></li>
+                <li><a href="">Github</a></li>
                 <p>🚗</p>
                 <p class="psst">(psst check the links!)</p>
 
@@ -86,7 +87,7 @@
 
 
 
-
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

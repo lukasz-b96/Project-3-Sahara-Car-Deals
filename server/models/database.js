@@ -13,3 +13,4 @@ db.once("open", () => {
 });
 
 require("./brand");
+require("./car");

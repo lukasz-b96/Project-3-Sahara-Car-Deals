@@ -1,0 +1,22 @@
+<h1 class="pb-4">Our Car Offer</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/brands">Brands</a></li>
+    <li class="breadcrumb-item" aria-current="page"><%- brand -%> </li>
+  </ol>
+</nav>
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+    <% if(cars != "") { %> <% cars.forEach(function(deal,index){ %>
+    <a href="/car/<%- deal.id -%> " class="col text-center scale-hover-big">
+      <div class="shadow">
+        <img
+          src="/uploads/<%- deal.image -%>"
+          alt="view-all"
+          Loading="lazy"
+        />
+      </div>
+      <div class="pt-1"><%- brand -%> <%- deal.model -%> - <%- deal.fixedPrice -%></div>
+    </a>
+    <%}) %> <% } %>
+  </div>
