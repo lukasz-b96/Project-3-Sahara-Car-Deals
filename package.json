@@ -2,7 +2,11 @@
   "name": "sahara-car-deals",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ejs",
+  "main": "server.js",
+  "engines": {
+    "node": "16.13.1",
+    "npm": "8.1.2"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "server": "nodemon server.js",
