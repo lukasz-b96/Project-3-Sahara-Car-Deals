@@ -1,18 +1,163 @@
-/* container */
-.container-xxl {
-  padding-right: 0;
-  padding-left: 0;
+:root {
+  --bs-font-sans-serif: "Outfit", sans-serif;
 }
 
+/* main */
+/* body */
+
+body {
+
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: radial-gradient(circle farthest-side,#d4d4d4,#decba4 ); 
+  background-size: cover !important;
+  color: black !important;
+  overflow-x: hidden;
+  height: 100% !important;
+  font-size: 20px;
+}
+main{
+  height: 100% !important;
+  margin-bottom: 40vh;
+}
+
+a {
+  text-decoration: none;
+  color: black !important;
+}
+
+.shorter{
+  width: 60%;
+  float: right !important;
+}
+
+a:hover {
+  color: rgb(175, 175, 175);
+}
+
+/* Brands Card */
+
+
+.scale-hover div {
+  border-radius: 9px;
+  transition: 300ms all;
+  text-decoration: none;
+}
+.scale-hover img {
+  height: 15vh !important;
+  transition: 300ms all;
+}
+.scale-hover:hover img {
+  transform: scale(1.1);
+}
+
+.scale-hover-big div {
+  border-radius: 9px;
+  transition: 300ms all;
+  text-decoration: none;
+}
+.scale-hover-big img {
+  height: 30vh  !important;
+  transition: 300ms all;
+  width: 100%;
+  border-radius: 9px;
+  object-fit: cover;
+}
+.scale-hover-big {
+  transition: 300ms all;
+}
+.scale-hover-big:hover {
+  transition: 300ms all;
+  transform: scale(1.05);
+}
+
+.car_link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+
+.car_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 330px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.car_img img {
+  width: 100%;
+  object-fit: cover;
+  transition: 250ms all;
+}
+
+.car_img:hover img {
+  transform: scale(1.1);
+}
+
+
+
+
+/* Brands page */
+
+@media screen and (max-width: 992px) {
+  .max-width{
+    max-width: 90%
+  }
+}
+
+
+/* Car page*/
+.car-img{
+  max-height: 100%;
+  max-width:  80vw !important;
+}
+
+
+
+/* About page*/
+ul{
+  list-style-type: none;
+}
+li a {
+  color: black;
+  text-decoration: none !important;
+  margin-left: 5px;
+}
+li a:hover {
+  color: black;
+}
+@media (max-width: 600px) {
+  li {
+    font-size: 12px !important;
+  }
+
+}
+
+
+
 /* footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100% !important;
+  z-index: 999 !important;
+}
 footer ul {
   display: inline-grid;
   position: fixed;
   grid-auto-flow: column;
   grid-gap: 24px;
-  margin-top: 4vh;
+  margin-top: 17px;
   left: 50%;
   transform: translateX(-50%);
+}
+footer ul li {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 footer a {
@@ -28,13 +173,13 @@ footer a:hover {
 footer ul p {
   position: fixed;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   left: 100%;
   top: 0%;
 }
 footer .psst {
   font-size: 12px;
-  color: white;
+  color: black;
   display: inline;
   overflow: hidden;
   white-space: nowrap;
@@ -44,20 +189,73 @@ footer .psst {
 
 footer ul:hover li + p {
   position: fixed;
-
   animation: wave-animation 6s infinite;
 }
-
-/* below is just for demo styling */
 
 footer div {
   display: flex;
   height: 60px;
   width: 100%;
-  background-color: #002a38;
+  background-color: #cbbd91 ;
+
   line-height: 1.3;
 }
 
+
+/*Waves*/
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 1vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 50px;
+  max-height: 200px;
+}
+
+
+/* Animations */
+
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 1vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 50px;
+  max-height: 200px;
+}
+
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
 @keyframes wave-animation {
   0% {
     left: 100%;
@@ -84,3 +282,16 @@ footer div {
     transform: rotate(360deg);
   }
 }
+
+/*Shrinking for mobile*/
+@media (max-width: 1000px) {
+  .waves {
+    height: 20px;
+    min-height: 10px;
+  }
+  .content {
+    height: 10vh;
+  }
+}
+
+

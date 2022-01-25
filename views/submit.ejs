@@ -1,0 +1,122 @@
+<div class="px-4 py-0 my-5 text-center">
+  <h3 class="display-5">Sell your factory new car!</h3>
+  <div class="col-lg-6 mx-auto"></div>
+</div>
+
+<div class="row justify-content-center">
+  <% if(infoSubmitObj != '') { %>
+  <div class="col-8 alert alert-success" role="alert"><%= infoSubmitObj %></div>
+  <% } %> <% if(infoErrorsObj != '') { %>
+  <div class="col-8 alert alert-danger" role="alert">
+    <%= infoErrorsObj[0].message %>
+  </div>
+  <% } %>
+
+  <div class="col-8">
+    <form action="/submit" enctype="multipart/form-data" method="POST">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="brand">Select Brand</label>
+          <select
+            required
+            id="brand"
+            onchange="countryChange(this);"
+            class="form-select form-control"
+            name="brand"
+            aria-label="Brand"
+          >
+            <option value="empty">Choose one</option>
+
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Bentley">Bentley</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="McLaren">McLaren</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label for="model">Select Model</label>
+          <select
+            required
+            id="model"
+            class="form-select form-control"
+            name="model"
+            aria-label="Model"
+          >
+            >
+            <option value="">Choose a brand first</option>
+          </select>
+          <div class="col-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              class="form-control"
+              cols="30"
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+
+        <!--   
+          <div class="col-12">
+            <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn">+ Ingredient</button>
+          </div> -->
+        <div class="col-12">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input
+            required
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+            name="phone"
+            id="phone"
+            placeholder="e.g. 123-123-123"
+            class="form-control"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="year" class="form-label">Production Year</label>
+          <input
+            min="1980"
+            max="2023"
+            required
+            type="number"
+            name="year"
+            id="year"
+            class="form-control"
+            placeholder="e.g. 2021"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="price" class="form-label">Price</label>
+          <input
+            required
+            type="number"
+            name="price"
+            id="price"
+            class="form-control"
+            placeholder="e.g. 2000000"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="image">Product Image</label>
+          <input
+            required
+            type="file"
+            class="form-control"
+            name="image"
+            accept="image/*"
+          />
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Recipe</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
