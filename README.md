@@ -15,9 +15,8 @@
 #### Naming convention: camelCase
 
 ## Description: 
-    Full Stack website deployed on Heroku created with Bootstrap, React.js, MongoDB,
-    and Node.js. Firstly, In this app, you have to create a new account (or use default Messi), and then
-    you have to log in to access the website. “Baran Book” imitates 'Instagram' you can like others'
-    posts, find different people, follow them, and check who is following you. In this case, I used
-    external image hosting “Cloudinary” to store Base64 strings and receive URLs to images. The
-    website is responsive, includes animation of the card and it is all adapted to mobile devices
+    Full Stack website deployed on Heroku created with Bootstrap, EJS, MongoDB, and
+    Node.js. This app allows you to browse car deals, search for a specific car, find available brands, add
+    your own deals protected by password, and delete them when your ad is out of date. Moreover, you
+    can send e-mails via this website. The website is responsive, includes an animated footer with a
+    riding car effect and it is all adapted to mobile devices.
