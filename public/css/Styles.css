@@ -230,7 +230,6 @@ footer a {
 }
 
 footer a:hover {
-  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
 }
 
 footer ul p {
@@ -240,6 +239,7 @@ footer ul p {
   left: 100%;
   top: 0%;
 }
+
 footer .psst {
   font-size: 12px;
   color: black;
@@ -335,12 +335,12 @@ footer div {
   }
   50% {
     left: 0%;
-    top: -180%;
+    top: -130%;
     transform: rotate(180deg);
   }
   75% {
     left: 100%;
-    top: -180%;
+    top: -130%;
     transform: rotate(270deg);
   }
   100% {
