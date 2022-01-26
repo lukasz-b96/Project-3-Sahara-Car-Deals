@@ -27,14 +27,15 @@
 
     <div class="col-12 d-flex justify-content-between ">
 
-      <h1 class="text-nowrap pb-5"><%- car.brand -%> <%- car.model -%></h1>
+      <h1 class="text-nowrap pb-5 mobile-name"><%- car.brand -%> <%- car.model -%></h1>
       <div class="mt-1 position">
-        <button class="me-3 mt-1 custom-btn" onclick="openForm()" id="diss">Delete</button>
+        <button class=" mt-1 custom-btn" onclick="openForm()" id="diss">Delete</button>
         <div id="opened" class="opened">
           <form action="/car/<%- car._id -%>" enctype="multipart/form-data" method="POST">
-            <button class="me-3 mt-1 custom-btn" type="submit">Confirm</button>
-            <button class="me-3 mt-1 custom-btn" onclick="closeForm()">Close</button>
-            <div class="form-popup me-3">
+            <button class=" mt-1 ms-1 custom-btn" onclick="closeForm()">Close</button>
+            <button class=" mt-1 custom-btn" type="submit">Confirm</button>
+
+            <div class="form-popup ">
 
               <input type="hidden" name="id" value="<?php echo $id; ?>" />
 
