@@ -196,7 +196,7 @@ exports.carSubmitPost = async (req, res) => {
         if (err) return res.satus(500).send(err);
       });
     }
-
+    var d = new Date(Date.now() + 60 * 60 * 1000);
     const newCar = new Car({
       brand: req.body.brand,
       model: req.body.model,

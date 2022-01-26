@@ -47,7 +47,7 @@ a:hover {
   text-decoration: none;
 }
 .scale-hover img {
-  height: 15vh !important;
+  height: 10vh !important;
   transition: 300ms all;
 }
 @media screen and (max-width: 550px) {
