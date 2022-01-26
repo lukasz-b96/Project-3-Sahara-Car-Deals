@@ -16,41 +16,22 @@
     <form action="/contact" enctype="multipart/form-data" method="POST">
       <div class="row g-3">
         <div class="col-6">
-          <label for="email" class="form-label">Receiver e-mail</label>
-          <input
-            required
-            type="email" 
-            id="email" 
-            name="email"
-  
-            class="form-control"
-            placeholder="My E-mail: lukaszbaran999@gmail.com"
-          />
+          <label for="email" class="form-label">Receiver</label>
+          <input required type="email" id="email" name="email" class="form-control"
+            placeholder="My E-mail: lukaszbaran999@gmail.com" />
         </div>
         <div class="col-6">
           <label for="subject" class="form-label">Subject</label>
-          <input
-            required
-            type="text"
-            name="subject"
-            id="subject"
-            class="form-control"
-          />
+          <input required type="text" name="subject" id="subject" class="form-control" />
         </div>
 
         <div class="col-12">
           <label for="description" class="form-label">Description</label>
-          <textarea
-            name="description"
-            id="description"
-            class="form-control"
-            cols="30"
-            rows="4"
-          ></textarea>
+          <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
         </div>
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Send an e-mail</button>
+          <button type="submit" class="btn btn-outline-secondary ">Send an e-mail</button>
         </div>
       </div>
     </form>
