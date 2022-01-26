@@ -359,4 +359,7 @@ footer div {
   .content {
     height: 10vh;
   }
+  .mobile-text {
+    font-size: 9px;
+  }
 }
