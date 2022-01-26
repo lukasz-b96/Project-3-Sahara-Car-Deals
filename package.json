@@ -2,7 +2,7 @@
   "name": "sahara-car-deals",
   "version": "1.0.0",
   "description": "",
-  "main": "main.ejs",
+  "main": "Main.ejs",
   "engines": {
     "node": "16.13.1",
     "npm": "8.1.2"
@@ -10,7 +10,6 @@
   "scripts": {
     "start": "node server.js"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {

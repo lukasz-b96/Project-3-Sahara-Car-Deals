@@ -1,4 +1,3 @@
-require("../models/database");
 const Brand = require("../models/brand");
 const Car = require("../models/car");
 const nodemailer = require("nodemailer");
@@ -25,13 +24,23 @@ exports.homepage = async (req, res) => {
   try {
     const limit = 5;
     const brands = await Brand.find({}).limit(5);
-    var latest = await Car.find({}).sort({ _id: -1 }).limit(7);
+    var latest = await Car.find({})
+      .sort({
+        _id: -1,
+      })
+      .limit(7);
 
     let cars = fixedPrice(latest);
 
-    res.render("index", { title: "CarDeals - Home", brands, cars });
+    res.render("index", {
+      title: "Sahara Car Deals - Home",
+      brands,
+      cars,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "error occur" });
+    res.status(500).send({
+      message: error.message || "error occur",
+    });
   }
 };
 
@@ -43,9 +52,14 @@ exports.exploreBrands = async (req, res) => {
     const limit = 10;
     const brands = await Brand.find({}).limit(limit);
 
-    res.render("brands", { title: "CarDeals - Brands", brands });
+    res.render("brands", {
+      title: "Sahara Car Deals  - Brands",
+      brands,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "error occur" });
+    res.status(500).send({
+      message: error.message || "error occur",
+    });
   }
 };
 
@@ -58,21 +72,33 @@ exports.exploreBrandById = async (req, res) => {
     if (id == "LandRover") {
       id = "Land Rover";
     }
-    let cars = await Car.find({ brand: id });
+    let cars = await Car.find({
+      brand: id,
+    });
 
     cars = fixedPrice(cars);
 
-    res.render("cars", { title: "CarDeals - " + id, brand: id, cars });
+    res.render("cars", {
+      title: "Sahara Car Deals - " + id,
+      brand: id,
+      cars,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "error occur" });
+    res.status(500).send({
+      message: error.message || "error occur",
+    });
   }
 };
 
 exports.exploreCarById = async (req, res) => {
   try {
+    const infoErrorsObj = req.flash("infoErrors");
+    const infoSubmitObj = req.flash("infoSubmit");
     let id = req.params.id;
 
-    let car = await Car.findOne({ _id: id });
+    let car = await Car.findOne({
+      _id: id,
+    });
     var newval = car.price.toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
@@ -80,9 +106,16 @@ exports.exploreCarById = async (req, res) => {
     });
     car.fixedPrice = newval;
 
-    res.render("car", { title: "CarDeals - Deal", car });
+    res.render("car", {
+      title: "Sahara Car Deals  - Deal",
+      car,
+      infoErrorsObj,
+      infoSubmitObj,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "error occur" });
+    res.status(500).send({
+      message: error.message || "error occur",
+    });
   }
 };
 exports.exploreRandom = async (req, res) => {
@@ -92,7 +125,9 @@ exports.exploreRandom = async (req, res) => {
     let car = await Car.findOne().skip(random).exec();
     res.redirect("/car/" + car._id);
   } catch (error) {
-    res.status(500).send({ message: error.message || "Error Occured" });
+    res.status(500).send({
+      message: error.message || "Error Occured",
+    });
   }
 };
 
@@ -102,17 +137,34 @@ exports.carSearch = async (req, res) => {
     const re = new RegExp(searchTerm, "i");
 
     let cars = await Car.find().or([
-      { brand: { $regex: re } },
-      { model: { $regex: re } },
-      { description: { $regex: re } },
+      {
+        brand: {
+          $regex: re,
+        },
+      },
+      {
+        model: {
+          $regex: re,
+        },
+      },
+      {
+        description: {
+          $regex: re,
+        },
+      },
     ]);
 
     cars = fixedPrice(cars);
 
     console.log(cars);
-    res.render("search", { title: "CarDeals - Search", cars });
+    res.render("search", {
+      title: "Sahara Car Deals - Search",
+      cars,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "Error Occured" });
+    res.status(500).send({
+      message: error.message || "Error Occured",
+    });
   }
 };
 
@@ -120,7 +172,7 @@ exports.carSubmitGet = async (req, res) => {
   const infoErrorsObj = req.flash("infoErrors");
   const infoSubmitObj = req.flash("infoSubmit");
   res.render("submit", {
-    title: "CarDeals - Submit",
+    title: "Sahara Car Deals - Submit",
     infoErrorsObj,
     infoSubmitObj,
   });
@@ -154,6 +206,7 @@ exports.carSubmitPost = async (req, res) => {
       image: newImageName,
       price: req.body.price,
       year: req.body.year,
+      password: req.body.password,
     });
 
     await newCar.save();
@@ -170,7 +223,7 @@ exports.contactSubmitGet = async (req, res) => {
   const infoErrorsObj = req.flash("infoErrors");
   const infoSubmitObj = req.flash("infoSubmit");
   res.render("contact", {
-    title: "CarDeals - Contact",
+    title: "Sahara Car Deals - Contact",
     infoErrorsObj,
     infoSubmitObj,
   });
@@ -204,7 +257,9 @@ exports.contactSubmitPost = async (req, res) => {
   }
 };
 exports.contactAbout = async (req, res) => {
-  res.render("about", { title: "CarDeals - About" });
+  res.render("about", {
+    title: "Sahara Car Deals - About",
+  });
 };
 
 exports.exploreAllCars = async (req, res) => {
@@ -213,15 +268,40 @@ exports.exploreAllCars = async (req, res) => {
 
     let cars = fixedPrice(all);
 
-    res.render("all", { title: "CarDeals - Home",  cars });
+    res.render("all", {
+      title: "Sahara Car Deals - Home",
+      cars,
+    });
   } catch (error) {
-    res.status(500).send({ message: error.message || "error occur" });
+    res.status(500).send({
+      message: error.message || "error occur",
+    });
   }
 };
 
-// insertDummyCategoryData();
+exports.deleteCarById = async (req, res) => {
+  console.log(req.params.id);
+  console.log(req.body.password);
+  try {
+    let id = req.params.id;
+    let car = await Car.findOne({
+      _id: id,
+    });
+    if (car.password != req.body.password) {
+      req.flash("infoErrors", "Passwords do not match");
+      return res.redirect("/car/" + id);
+    }
+    await Car.deleteOne({
+      _id: id,
+    });
+    res.redirect("/");
+  } catch (error) {
+    req.flash("infoErrors", error);
+    res.redirect("/car/" + id);
+  }
+};
 
-// async function insertDummyCategoryData() {
+// async function insert() {
 //   try {
 //     await Car.insertMany([
 //       {
@@ -284,4 +364,4 @@ exports.exploreAllCars = async (req, res) => {
 //   }
 // }
 
-//  insertDummyCategoryData();
+//  insert();

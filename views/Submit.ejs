@@ -8,7 +8,7 @@
   <div class="col-8 alert alert-success" role="alert"><%= infoSubmitObj %></div>
   <% } %> <% if(infoErrorsObj != '') { %>
   <div class="col-8 alert alert-danger" role="alert">
-    <%= infoErrorsObj[0].message %>
+    <%= infoErrorsObj %>
   </div>
   <% } %>
 
@@ -17,14 +17,8 @@
       <div class="row g-3">
         <div class="col-12">
           <label for="brand">Select Brand</label>
-          <select
-            required
-            id="brand"
-            onchange="countryChange(this);"
-            class="form-select form-control"
-            name="brand"
-            aria-label="Brand"
-          >
+          <select required id="brand" onchange="countryChange(this);" class="form-select form-control" name="brand"
+            aria-label="Brand">
             <option value="empty">Choose one</option>
 
             <option value="Aston Martin">Aston Martin</option>
@@ -37,25 +31,13 @@
 
         <div class="col-12">
           <label for="model">Select Model</label>
-          <select
-            required
-            id="model"
-            class="form-select form-control"
-            name="model"
-            aria-label="Model"
-          >
+          <select required id="model" class="form-select form-control" name="model" aria-label="Model">
             >
             <option value="">Choose a brand first</option>
           </select>
           <div class="col-12">
             <label for="description" class="form-label">Description</label>
-            <textarea
-              name="description"
-              id="description"
-              class="form-control"
-              cols="30"
-              rows="4"
-            ></textarea>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
           </div>
         </div>
 
@@ -65,56 +47,33 @@
           </div> -->
         <div class="col-12">
           <label for="phone" class="form-label">Phone Number</label>
-          <input
-            required
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-            name="phone"
-            id="phone"
-            placeholder="e.g. 123-123-123"
-            class="form-control"
-          />
+          <input required type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phone" id="phone"
+            placeholder="e.g. 123-123-123" class="form-control" />
         </div>
 
         <div class="col-12">
           <label for="year" class="form-label">Production Year</label>
-          <input
-            min="1980"
-            max="2023"
-            required
-            type="number"
-            name="year"
-            id="year"
-            class="form-control"
-            placeholder="e.g. 2021"
-          />
+          <input min="1980" max="2023" required type="number" name="year" id="year" class="form-control"
+            placeholder="e.g. 2021" />
         </div>
 
         <div class="col-12">
           <label for="price" class="form-label">Price</label>
-          <input
-            required
-            type="number"
-            name="price"
-            id="price"
-            class="form-control"
-            placeholder="e.g. 2000000"
-          />
+          <input required type="number" name="price" id="price" class="form-control" placeholder="e.g. 2000000" />
         </div>
 
         <div class="col-12">
           <label for="image">Product Image</label>
-          <input
-            required
-            type="file"
-            class="form-control"
-            name="image"
-            accept="image/*"
-          />
+          <input required type="file" class="form-control" name="image" accept="image/*" />
+        </div>
+        <div class="col-12">
+          <label for="phone" class="form-label">Password to delete this deal</label>
+          <input required type="text" name="password" id="password" placeholder="Your secret password"
+            class="form-control" />
         </div>
 
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Submit Recipe</button>
+        <div class="col-12 d-flex">
+          <button type="submit" class="btn btn-outline-secondary btn-lg mx-auto">Submit Your Deal</button>
         </div>
       </div>
     </form>

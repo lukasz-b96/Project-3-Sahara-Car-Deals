@@ -31,3 +31,14 @@ function countryChange(selectObj) {
     }
   }
 }
+
+
+function openForm() {
+  document.getElementById("opened").style.display = "block";
+  document.getElementById("diss").style.display = "none";
+}
+
+function closeForm() {
+  document.getElementById("opened").style.display = "none";
+  document.getElementById("diss").style.display = "block";
+}
