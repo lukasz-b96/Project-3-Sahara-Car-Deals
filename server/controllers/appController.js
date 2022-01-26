@@ -33,7 +33,7 @@ exports.homepage = async (req, res) => {
     let cars = fixedPrice(latest);
 
     res.render("index", {
-      title: "CarDeals - Home",
+      title: "Sahara Car Deals - Home",
       brands,
       cars,
     });
@@ -53,7 +53,7 @@ exports.exploreBrands = async (req, res) => {
     const brands = await Brand.find({}).limit(limit);
 
     res.render("brands", {
-      title: "CarDeals - Brands",
+      title: "Sahara Car Deals  - Brands",
       brands,
     });
   } catch (error) {
@@ -79,7 +79,7 @@ exports.exploreBrandById = async (req, res) => {
     cars = fixedPrice(cars);
 
     res.render("cars", {
-      title: "CarDeals - " + id,
+      title: "Sahara Car Deals - " + id,
       brand: id,
       cars,
     });
@@ -107,7 +107,7 @@ exports.exploreCarById = async (req, res) => {
     car.fixedPrice = newval;
 
     res.render("car", {
-      title: "CarDeals - Deal",
+      title: "Sahara Car Deals  - Deal",
       car,
       infoErrorsObj,
       infoSubmitObj,
@@ -158,7 +158,7 @@ exports.carSearch = async (req, res) => {
 
     console.log(cars);
     res.render("search", {
-      title: "CarDeals - Search",
+      title: "Sahara Car Deals - Search",
       cars,
     });
   } catch (error) {
@@ -172,7 +172,7 @@ exports.carSubmitGet = async (req, res) => {
   const infoErrorsObj = req.flash("infoErrors");
   const infoSubmitObj = req.flash("infoSubmit");
   res.render("submit", {
-    title: "CarDeals - Submit",
+    title: "Sahara Car Deals - Submit",
     infoErrorsObj,
     infoSubmitObj,
   });
@@ -223,7 +223,7 @@ exports.contactSubmitGet = async (req, res) => {
   const infoErrorsObj = req.flash("infoErrors");
   const infoSubmitObj = req.flash("infoSubmit");
   res.render("contact", {
-    title: "CarDeals - Contact",
+    title: "Sahara Car Deals - Contact",
     infoErrorsObj,
     infoSubmitObj,
   });
@@ -258,7 +258,7 @@ exports.contactSubmitPost = async (req, res) => {
 };
 exports.contactAbout = async (req, res) => {
   res.render("about", {
-    title: "CarDeals - About",
+    title: "Sahara Car Deals - About",
   });
 };
 
@@ -269,7 +269,7 @@ exports.exploreAllCars = async (req, res) => {
     let cars = fixedPrice(all);
 
     res.render("all", {
-      title: "CarDeals - Home",
+      title: "Sahara Car Deals - Home",
       cars,
     });
   } catch (error) {
