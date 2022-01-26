@@ -14,7 +14,7 @@
 
 #### Naming convention: camelCase
 
-## Description: 
+### Description: 
     Full Stack website deployed on Heroku created with Bootstrap, EJS, MongoDB, and
     Node.js. This app allows you to browse car deals, search for a specific car, find available brands, add
     your own deals protected by password, and delete them when your ad is out of date. Moreover, you
