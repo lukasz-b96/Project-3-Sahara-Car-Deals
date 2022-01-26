@@ -53,6 +53,10 @@ const carSchema = new mongoose.Schema(
     year:{
       type: Number,
       required: "this field is requierd",
+    },
+    password:{
+      type: String,
+      required: "this field is requierd",
     }
   },
   {

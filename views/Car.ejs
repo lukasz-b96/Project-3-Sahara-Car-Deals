@@ -1,0 +1,78 @@
+<% if(car != null) { %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item">
+      <a href="/brands/<%- car.brand.replace(/ /g, '') -%>"><%- car.brand -%> <%- car.model -%> </a>
+    </li>
+    <li class="breadcrumb-item">#<%- car._id -%></li>
+  </ol>
+</nav>
+<div class="row mx-auto car-img">
+
+  <div class="d-flex justify-content-center">
+    <% if(infoErrorsObj != '') { %>
+      <div class="col-8 alert alert-danger" role="alert">
+        <%= infoErrorsObj %>
+      </div>
+      <% } %>
+  </div>
+
+  <img src="/uploads/<%- car.image -%>" class="rounded mx-auto" />
+
+
+
+  <div class="mx-auto phones-car">
+
+
+    <div class="col-12 d-flex justify-content-between ">
+
+      <h1 class="text-nowrap pb-5"><%- car.brand -%> <%- car.model -%></h1>
+      <div class="mt-1 position" >
+        <button class="me-3 mt-1 custom-btn" onclick="openForm()" id="diss">Delete</button>
+        <div id="opened" class="opened">
+          <form action="/car/<%- car._id -%>" enctype="multipart/form-data"  method="POST">
+          <button class="me-3 mt-1 custom-btn" type="submit" >Confirm</button>
+          <button class="me-3 mt-1 custom-btn"  onclick="closeForm()">Close</button>
+          <div class="form-popup me-3"  >
+            
+              <input type="hidden" name="id" value="<?php echo $id; ?>" />
+  
+              <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
+          
+    
+            </form>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <div class="col-12 mb-1 ">
+      <i class="bi bi-tag me-2"></i>
+      <span>Price: <%- car.fixedPrice -%> </span>
+
+    </div>
+
+    <div class="col-12 mb-1">
+      <i class="bi bi-calendar-date me-2"></i>
+
+      <span>Production Year: <%- car.year -%> </span>
+    </div>
+    <div>
+      <i class="bi bi-telephone-forward-fill me-2"></i>
+      <span>Contact Number: <%- car.phone-%> </span>
+    </div>
+    <div class="mb-1 col-24">
+      <i class="bi bi-info-circle me-2"></i>
+      <span>Description: <%- car.description-%> </span>
+    </div>
+    
+
+  </div>
+
+</div>
+</div>
+
+<% } else{ %>
+<h1>bar</h1>
+<% } %>

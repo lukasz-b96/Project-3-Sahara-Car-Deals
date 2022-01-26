@@ -112,7 +112,74 @@ a:hover {
 /* Car page*/
 .car-img{
   max-height: 100%;
-  max-width:  80vw !important;
+  max-width:  80vw;
+}
+.position{
+  display: flex;
+  float: right;
+}
+.custom-btn{
+
+  
+    padding: 3px 7px;
+
+    border-radius: 6px;
+    border: none;
+  
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #DFDEDF;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    height: 40%;
+    margin-bottom: 3px;
+
+}
+.opened{
+  display: none;
+}
+.custom-btn:hover{
+  background-color: grey;
+  transform: scale(1.05);
+  cursor:pointer;
+}
+.form-popup {
+ 
+  max-width: 200px;
+}
+.form-popup input {
+  display: flex;
+  float: right;
+  max-width: 170px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  h1{
+    font-size: 14px !important;
+  }
+  a{
+    font-size: 13px !important;
+    padding: none;
+
+  }
+  .phones-car{
+    font-size: 12px !important;
+  }
+  .custom-btn{
+    font-size: 11px;
+    height: 40%;
+    margin-right: 1px !important;
+  }
+  .form-popup input {
+    font-size: 7px;
+    max-width: 100px;
+  }
+  
+
 }
 
 
@@ -121,7 +188,7 @@ a:hover {
 ul{
   list-style-type: none;
 }
-li a {
+li p {
   color: black;
   text-decoration: none !important;
   margin-left: 5px;
