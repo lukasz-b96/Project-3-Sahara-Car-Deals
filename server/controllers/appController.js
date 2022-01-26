@@ -22,7 +22,6 @@ function fixedPrice(cars) {
 
 exports.homepage = async (req, res) => {
   try {
-    const limit = 5;
     const brands = await Brand.find({}).limit(5);
     var latest = await Car.find({})
       .sort({

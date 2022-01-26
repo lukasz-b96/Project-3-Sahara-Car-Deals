@@ -1,9 +1,13 @@
-# Backend: Node.js
+# Project-3-Sahara-Car-Deals
 
-## Run: npm run server
+### Author: Łukasz Baran
 
-## Style Convention: camelCase
+## Backend: Node.js
 
-# Frontend: EJS
+### Run: npm run server
 
-## Style Convention: PascalCase
+### Naming convention: camelCase
+
+## Frontend: EJS
+
+### Naming convention: camelCase
