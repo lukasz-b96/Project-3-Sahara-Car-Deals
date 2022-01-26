@@ -7,3 +7,4 @@
 # Frontend: EJS
 
 ## Style Convention: PascalCase
+
